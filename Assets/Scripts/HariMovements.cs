@@ -2,41 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HariMovements : MonoBehaviour
-{
-    bool isPulling;
-    bool isFalling;
-    public float backPosY;
-    float initialPosY;
-    public float pullSpeed;
-    public float fallSpeed;
+public class HariMovements : MonoBehaviour {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        isPulling = false;   
-        initialPosY = transform.localPosition.y;
+    [SerializeField] float pullPosY;
+    [SerializeField] float waitPosY;
+    [SerializeField] float pullSpeed;
+    [SerializeField] float fallSpeed;
+    [SerializeField] float waitTimeSecond;
+
+    public enum HariState {
+        wait, pull, fall
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0) && !isPulling && !isFalling){
-            isPulling = true;
-        }
+    HariState state;
 
-        if(isPulling) {
+    void Start() {
+        state = HariState.wait; 
+        transform.position = new Vector3(transform.position.x, waitPosY, 0);
+    }
+
+    void Update() {
+        if(Input.GetMouseButtonDown(0) && state == HariState.wait){
+            StartCoroutine(PullCoroutine());
+        }
+    }
+
+    IEnumerator PullCoroutine() {
+        state = HariState.pull;
+        var pullFrameCount = Mathf.Abs(waitPosY - pullPosY) / pullSpeed;
+        for(int i = 0; i < pullFrameCount; i++){
             transform.position += new Vector3(0, pullSpeed, 0);
-            if(transform.localPosition.y >= backPosY) {
-                isPulling = false;
-                isFalling = true;
-            }
+            yield return null;
         }
-        if(isFalling){
+
+        yield return new WaitForSeconds(waitTimeSecond);
+
+        state = HariState.fall;
+        var fallFrameCount = Mathf.Abs(waitPosY - pullPosY) / fallSpeed;
+        for(int i = 0; i < fallFrameCount; i++){
             transform.position -= new Vector3(0, fallSpeed, 0);
-            if(transform.localPosition.y <= initialPosY) {
-                isFalling = false;
-            }
+            yield return null;
         }
+
+        state = HariState.wait;
     }
+
 }
