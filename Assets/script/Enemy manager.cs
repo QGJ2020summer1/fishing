@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class calacters : MonoBehaviour
+﻿
 using UnityEngine;
 
 // 敵の出現を制御するコンポーネント
