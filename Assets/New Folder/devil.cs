@@ -13,6 +13,6 @@ public class devil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         transform.Translate(new Vector2(-0.1f * Time.deltaTime, 0));
+         transform.Translate(new Vector2(2.0f * Time.deltaTime, 0));
     }
 }
