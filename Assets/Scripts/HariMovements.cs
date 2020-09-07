@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HariMovements : MonoBehaviour {
 
-    [SerializeField] float pullPosY;
-    [SerializeField] float waitPosY;
-    [SerializeField] float pullSpeed;
-    [SerializeField] float fallSpeed;
-    [SerializeField] float waitTimeSecond;
+    [SerializeField] float waitPosY;        //針の初期位置
+    [SerializeField] float pullPosY;        //針を引っ張り切った時の位置
+    [SerializeField] float pullSpeed;       //針を引っ張る速度
+    [SerializeField] float fallSpeed;       //針を落とす速度
+    [SerializeField] float waitTimeSecond;  //針を引っ張り切った状態で待つ時間
 
     public enum HariState {
         wait, pull, fall
