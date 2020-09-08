@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1392161113209711439}
   - component: {fileID: 3789739805926952622}
   m_Layer: 0
-  m_Name: devil
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 517245f6c72d440d89fe84b84d77039b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a22c669e9d1e544ad9a74d6b307b465d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
