@@ -32,6 +32,10 @@ public class FishMovement : MonoBehaviour
     // 敵が生成された時に呼び出される関数
     private void Start()
     {
+        if(Random.value <= 0.95f) {
+            transform.GetChild(0).gameObject.SetActive(false);      //あとで消す
+        }
+
         // HP を初期化する
         m_hp = m_hpMax;
     }
