@@ -14,6 +14,7 @@ public class ScoreCounter : MonoBehaviour {
 
     int score;
 
+
     void Start() {
         ui_scoreText = GetComponent<Text>();
         instance = this;
@@ -33,6 +34,10 @@ public class ScoreCounter : MonoBehaviour {
     int DecideScoreValue(FishSize size, bool isRare) {
         int index = (int)size;
         return isRare ? rareScoreArray[index] : normalScoreArray[index];
+    }
+
+    public int GetScore() {
+        return score;
     }
 
 }
