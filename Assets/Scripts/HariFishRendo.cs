@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class HariFishRendo : MonoBehaviour
 {
-    
+    public FishSize size;
+    public FishType type;
+    public bool isRare;
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,11 +16,21 @@ public class HariFishRendo : MonoBehaviour
             GameObject obj = collision.gameObject;
             transform.parent = obj.transform;
             GetComponent<FishMovement>().enabled = false;
+        
+            Invoke("AddScore", 1.0f);
 
-
-            Destroy (this.gameObject, 3.0f);
+            
             //Debug.Log("接触");
         }
+    }
+    
+
+    void AddScore()
+    {
+        ScoreCounter.instance.AddScore(size, isRare);
+            FishPowerHandler.instance.ChangeFishPower(type, size);
+            Destroy (this.gameObject);
+
     }
 
 
