@@ -13,7 +13,7 @@ public enum RESPAWN_TYPE
 }
 
 // 敵を制御するコンポーネント
-public class Enemy : MonoBehaviour
+public class FishMovement : MonoBehaviour
 {
     public Vector2 m_respawnPosInside; // 敵の出現位置（内側）
     public Vector2 m_respawnPosOutside; // 敵の出現位置（外側）
