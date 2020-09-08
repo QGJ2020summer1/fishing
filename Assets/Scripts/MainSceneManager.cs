@@ -7,10 +7,13 @@ public class MainSceneManager : MonoBehaviour {
 
     public static int score;        //ゲーム終了時のスコア
 
+    bool isStopped;
+
     public static MainSceneManager instance;
 
     void Start() {
         instance = this;
+        isStopped = false;
     }
 
     public void FinishGame(int score) {
@@ -19,8 +22,20 @@ public class MainSceneManager : MonoBehaviour {
     }
 
     IEnumerator FinishGameCoroutine() {
+        PauseGame();
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("result");
     }
 
+    public void PauseGame() {
+        isStopped = true;
+    }
+
+    public void RestartGame() {
+        isStopped = false;
+    }
+
+    public bool isPausedGame() {
+        return isStopped;
+    }
 }
