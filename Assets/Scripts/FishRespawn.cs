@@ -32,11 +32,7 @@ public class FishRespawn : MonoBehaviour
         // 敵のゲームオブジェクトを生成する
         var enemy = Instantiate( enemyPrefab );
 
-        // 敵を画面外のどの位置に出現させるかランダムに決定する
-        var respawnType = ( RESPAWN_TYPE )Random.Range( 
-            0, ( int )RESPAWN_TYPE.SIZEOF );
-
         // 敵を初期化する
-        enemy.Init( respawnType );
+        enemy.Init();
     }
 }

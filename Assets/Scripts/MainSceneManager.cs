@@ -25,7 +25,8 @@ public class MainSceneManager : MonoBehaviour {
 
     IEnumerator FinishGameCoroutine() {
         PauseGame();
-        yield return new WaitForSeconds(2);
+        SoundPlayer.instance.PlaySoundEffect(SoundEffectType.gameEnd);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("result");
     }
 

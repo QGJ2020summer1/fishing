@@ -16,7 +16,7 @@ public class HariFishRendo : MonoBehaviour
             GameObject obj = collision.gameObject;
             transform.parent = obj.transform;
             GetComponent<FishMovement>().enabled = false;
-        
+            SoundPlayer.instance.PlaySoundEffect(SoundEffectType.hari);
             Invoke("AddScore", 1.0f);
 
             
@@ -28,6 +28,7 @@ public class HariFishRendo : MonoBehaviour
     void AddScore()
     {
         ScoreCounter.instance.AddScore(size, isRare);
+            SoundPlayer.instance.PlaySoundEffect(SoundEffectType.getScore);
             FishPowerHandler.instance.ChangeFishPower(type, size);
             Destroy (this.gameObject);
 

@@ -27,6 +27,8 @@ public class FishMovement : MonoBehaviour
     private int m_hp; // HP
     private Vector3 m_direction; // 進行方向
 
+    public RESPAWN_TYPE respawnType;
+
     // 敵が生成された時に呼び出される関数
     private void Start()
     {
@@ -37,12 +39,13 @@ public class FishMovement : MonoBehaviour
     // 毎フレーム呼び出される関数
     private void Update()
     {
+        if(MainSceneManager.instance.isPausedGame()) return;
         // まっすぐ移動する
         transform.localPosition += m_direction * m_speed;
     }
 
     // 敵が出現する時に初期化する関数
-    public void Init( RESPAWN_TYPE respawnType )
+    public void Init()
     {
         var pos = Vector3.zero;
 
