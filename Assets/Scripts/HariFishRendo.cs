@@ -4,30 +4,20 @@ using UnityEngine;
 
 public class HariFishRendo : MonoBehaviour
 {
-    public GameObject parent;
-    public GameObject child;
     
-    public void OnTriggerEnter2d(Collider collision)
+    
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        string layerName = LayerMask.LayerToName(collision.gameObject.layer);
-        if (layerName == "Cube")
+        string tagName = collision.gameObject.tag;
+        if (tagName == "Hari")
         {
-            child = collision.gameObject;
-            child.transform.parent = parent.transform;
+            GameObject obj = collision.gameObject;
+            transform.parent = obj.transform;
+            GetComponent<FishMovement>().enabled = false;
             //Debug.Log("接触");
         }
     }
-  void OnTriggerEnter(Collider other)
-    {
-        //接触しているオブジェクトのタグが"Player"のとき
-        if (other.CompareTag("Hari"))
-        {
-            True1.GetComponent<FishMovement>().enabled = false;
-        }
-    }
 
-    public void OnTriggerExit(Collider collision)
-    {
-        child.transform.parent = null;
-    }
+
+    
 }
