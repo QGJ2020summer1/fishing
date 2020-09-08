@@ -35,4 +35,8 @@ public class ScoreCounter : MonoBehaviour {
         return isRare ? rareScoreArray[index] : normalScoreArray[index];
     }
 
+    public int GetScore() {
+        return score;
+    }
+
 }
