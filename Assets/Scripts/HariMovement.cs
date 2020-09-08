@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HariMovements : MonoBehaviour {
+public class HariMovement : MonoBehaviour {
 
     [SerializeField] float waitPosY;        //針の初期位置
     [SerializeField] float pullPosY;        //針を引っ張りきった時の位置
