@@ -18,7 +18,8 @@ public class ScoreCounter : MonoBehaviour {
         UpdateView();
     }
 
-    public void AddScore() {
+    public void AddScore(FishSize size) {
+
         score++;
         UpdateView();
     }
@@ -26,6 +27,5 @@ public class ScoreCounter : MonoBehaviour {
     void UpdateView() {
         ui_scoreText.text = string.Format("{0:000}", score);
     }
-
 
 }
