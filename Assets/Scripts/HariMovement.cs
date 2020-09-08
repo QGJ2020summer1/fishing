@@ -18,7 +18,7 @@ public class HariMovement : MonoBehaviour {
 
     void Start() {
         state = HariState.wait; 
-        transform.position = new Vector3(transform.position.x, waitPosY, 0);
+        transform.localPosition = new Vector3(transform.localPosition.x, waitPosY, 0);
     }
 
     void Update() {
@@ -30,12 +30,16 @@ public class HariMovement : MonoBehaviour {
 
     IEnumerator PullCoroutine() {
         state = HariState.pull;
+        BoxCollider2D col = GetComponent<BoxCollider2D>();
+
+        col.enabled = true;
         var pullFrameCount = Mathf.Abs(waitPosY - pullPosY) / pullSpeed;
         for(int i = 0; i < pullFrameCount; i++){
             while (MainSceneManager.instance.isPausedGame()) { yield return null; }
             transform.position += new Vector3(0, pullSpeed, 0);
             yield return null;
         }
+        col.enabled = false;
 
         yield return new WaitForSeconds(waitTimeSecond);
 

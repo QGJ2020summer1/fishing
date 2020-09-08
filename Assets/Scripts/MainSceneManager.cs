@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainSceneManager : MonoBehaviour {
 
     public static int score;        //ゲーム終了時のスコア
+    public List<int> catchedFishNum = new List<int>(){0, 0, 0, 0, 0, 0};
 
     bool isStopped;
 
@@ -18,6 +19,7 @@ public class MainSceneManager : MonoBehaviour {
 
     public void FinishGame(int score) {
         MainSceneManager.score = score;
+        
         StartCoroutine(FinishGameCoroutine());
     }
 
