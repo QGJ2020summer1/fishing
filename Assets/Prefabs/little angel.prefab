@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5625107510140127570}
   - component: {fileID: -3436862185492719624}
   - component: {fileID: -3973118082099938551}
+  - component: {fileID: -8504496230800029805}
   m_Layer: 0
   m_Name: little angel
   m_TagString: Untagged
@@ -140,3 +141,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 8, y: 6.73}
   m_Direction: 0
+--- !u!114 &-8504496230800029805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369963778483622751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e456d5b391353459eb734243ce4333de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 8430826785403945463}
   - component: {fileID: 3544948257610065220}
   - component: {fileID: -6699971035372776559}
+  - component: {fileID: 2794444690854977859}
+  - component: {fileID: 8902640651562052529}
+  - component: {fileID: 174319795668978078}
   m_Layer: 0
-  m_Name: big anjel
+  m_Name: big angel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,5 +96,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17856786fce4e473685a5080e6905818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_respawnPosInside: {x: 0, y: 0}
+  m_respawnPosOutside: {x: 0, y: 0}
+  m_speed: 0
+  m_hpMax: 0
+  m_exp: 0
+  m_damage: 0
+--- !u!50 &2794444690854977859
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047723124893493984}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &8902640651562052529
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047723124893493984}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 7.9999995, y: 7.5199995}
+  m_Direction: 0
+--- !u!114 &174319795668978078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047723124893493984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e456d5b391353459eb734243ce4333de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

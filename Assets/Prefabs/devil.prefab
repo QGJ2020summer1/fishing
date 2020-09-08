@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5704846008086618948}
   - component: {fileID: -7138763480922851023}
   - component: {fileID: 1022350256442395443}
+  - component: {fileID: 649586150086954525}
   m_Layer: 0
   m_Name: devil
   m_TagString: Untagged
@@ -140,3 +141,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 7.26, y: 8}
   m_Direction: 0
+--- !u!114 &649586150086954525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378578219571737232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e456d5b391353459eb734243ce4333de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
