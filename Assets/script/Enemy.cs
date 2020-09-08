@@ -7,7 +7,7 @@ public enum RESPAWN_TYPE
 {
    
     RIGHT, // 右
- 
+   
     LEFT, // 左
     SIZEOF, // 敵の出現位置の数
 }
@@ -18,9 +18,9 @@ public class Enemy : MonoBehaviour
     public Vector2 m_respawnPosInside; // 敵の出現位置（内側）
     public Vector2 m_respawnPosOutside; // 敵の出現位置（外側）
     public float m_speed; // 移動する速さ
-    
+    public int m_hpMax; // HP の最大値
     public int m_exp; // この敵を倒した時に獲得できる経験値
-   
+    public int m_damage; // この敵がプレイヤーに与えるダメージ
 
     private int m_hp; // HP
     private Vector3 m_direction; // 進行方向
@@ -48,7 +48,8 @@ public class Enemy : MonoBehaviour
         // 出現位置と進行方向を決定する
         switch ( respawnType )
         {
-           
+            
+
             // 出現位置が右の場合
             case RESPAWN_TYPE.RIGHT:
                 pos.x = m_respawnPosOutside.x;
@@ -57,7 +58,7 @@ public class Enemy : MonoBehaviour
                 m_direction = Vector2.left;
                 break;
 
-            
+         
 
             // 出現位置が左の場合
             case RESPAWN_TYPE.LEFT:
