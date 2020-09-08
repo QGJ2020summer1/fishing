@@ -14,6 +14,9 @@ public class HariFishRendo : MonoBehaviour
             GameObject obj = collision.gameObject;
             transform.parent = obj.transform;
             GetComponent<FishMovement>().enabled = false;
+
+
+            Destroy (this.gameObject, 3.0f);
             //Debug.Log("接触");
         }
     }
