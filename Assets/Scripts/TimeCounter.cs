@@ -25,7 +25,7 @@ public class TimeCounter : MonoBehaviour
             timeLimit--;
             UpdateView();
         }
-        MainSceneManager.instance.FinishGame(ScoreCounter.instance.GetScore());
+        MainSceneManager.instance.FinishGame(ScoreCounter.instance.GetScore(), FishPowerHandler.instance.GetCatchedFishNum());
     }
 
     void UpdateView() {

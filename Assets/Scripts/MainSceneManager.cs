@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainSceneManager : MonoBehaviour {
 
     public static int score;        //ゲーム終了時のスコア
-    public List<int> catchedFishNum = new List<int>(){0, 0, 0, 0, 0, 0};
+    public static List<int> catchedFishNum = new List<int>(){0, 0, 0, 0, 0, 0};
 
     bool isStopped;
 
@@ -17,15 +17,16 @@ public class MainSceneManager : MonoBehaviour {
         isStopped = false;
     }
 
-    public void FinishGame(int score) {
+    public void FinishGame(int score, List<int> catchedFishNum) {
         MainSceneManager.score = score;
-        
+        MainSceneManager.catchedFishNum = catchedFishNum;
         StartCoroutine(FinishGameCoroutine());
     }
 
     IEnumerator FinishGameCoroutine() {
         PauseGame();
-        yield return new WaitForSeconds(2);
+        SoundPlayer.instance.PlaySoundEffect(SoundEffectType.gameEnd);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("result");
     }
 

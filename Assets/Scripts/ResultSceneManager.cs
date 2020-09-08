@@ -12,6 +12,7 @@ public class ResultSceneManager : MonoBehaviour
     {
         ui_scoreText = GetComponent<Text>();
         ui_scoreText.text = MainSceneManager.score.ToString();
+        Debug.Log(string.Join(",", MainSceneManager.catchedFishNum));
     }
 
     void Update()

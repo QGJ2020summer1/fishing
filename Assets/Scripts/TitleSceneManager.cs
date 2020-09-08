@@ -15,7 +15,13 @@ public class TitleSceneManager : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButtonDown(0)) {
-            SceneManager.LoadScene("main");
+            StartCoroutine(GoToMaincoroutine());
         }
+    }
+
+    IEnumerator GoToMaincoroutine() {
+        SoundPlayer.instance.PlaySoundEffect(SoundEffectType.gameStart);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("main");
     }
 }
