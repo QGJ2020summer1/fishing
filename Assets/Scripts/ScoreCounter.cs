@@ -14,6 +14,7 @@ public class ScoreCounter : MonoBehaviour {
 
     int score;
 
+
     void Start() {
         ui_scoreText = GetComponent<Text>();
         instance = this;

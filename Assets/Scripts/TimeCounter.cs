@@ -21,6 +21,7 @@ public class TimeCounter : MonoBehaviour
     IEnumerator TimeCountCoroutine() {
         while(timeLimit > 0) {
             yield return new WaitForSeconds(1);
+            if(MainSceneManager.instance.isPausedGame()) continue;
             timeLimit--;
             UpdateView();
         }
