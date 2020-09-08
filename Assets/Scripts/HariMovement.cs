@@ -24,7 +24,6 @@ public class HariMovement : MonoBehaviour {
     void Update() {
         if(Input.GetMouseButtonDown(0) && state == HariState.wait){
             StartCoroutine(PullCoroutine());
-            
         }
     }
 
