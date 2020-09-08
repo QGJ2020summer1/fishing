@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4593766085641626639}
   - component: {fileID: 7707082075120844085}
+  - component: {fileID: -7187748933448178782}
   m_Layer: 0
-  m_Name: big enjel
+  m_Name: big anjel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,3 +83,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7187748933448178782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770759215727095023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2cdcf3863b04e8c83f338a9344c12f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_respawnPosInside: {x: 0, y: 0}
+  m_respawnPosOutside: {x: 0, y: 0}
+  m_speed: 0
+  m_hpMax: 0
+  m_exp: 0
+  m_damage: 0
