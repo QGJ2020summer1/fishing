@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 219962484464555613}
   - component: {fileID: 1722769413824975032}
   - component: {fileID: 5704846008086618948}
+  - component: {fileID: -7138763480922851023}
+  - component: {fileID: 1022350256442395443}
+  - component: {fileID: 649586150086954525}
   m_Layer: 0
   m_Name: devil
   m_TagString: Untagged
@@ -93,5 +96,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17856786fce4e473685a5080e6905818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_respawnPosInside: {x: 0, y: 0}
+  m_respawnPosOutside: {x: 0, y: 0}
+  m_speed: 0
+  m_hpMax: 0
+  m_exp: 0
+  m_damage: 0
+--- !u!50 &-7138763480922851023
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378578219571737232}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &1022350256442395443
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378578219571737232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 7.26, y: 8}
+  m_Direction: 0
+--- !u!114 &649586150086954525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378578219571737232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e456d5b391353459eb734243ce4333de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
