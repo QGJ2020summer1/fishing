@@ -32,6 +32,7 @@ public class HariMovement : MonoBehaviour {
         state = HariState.pull;
         var pullFrameCount = Mathf.Abs(waitPosY - pullPosY) / pullSpeed;
         for(int i = 0; i < pullFrameCount; i++){
+            while (MainSceneManager.instance.isPausedGame()) { yield return null; }
             transform.position += new Vector3(0, pullSpeed, 0);
             yield return null;
         }
@@ -41,6 +42,7 @@ public class HariMovement : MonoBehaviour {
         state = HariState.fall;
         var fallFrameCount = Mathf.Abs(waitPosY - pullPosY) / fallSpeed;
         for(int i = 0; i < fallFrameCount; i++){
+            while (MainSceneManager.instance.isPausedGame()) { yield return null; }
             transform.position -= new Vector3(0, fallSpeed, 0);
             yield return null;
         }

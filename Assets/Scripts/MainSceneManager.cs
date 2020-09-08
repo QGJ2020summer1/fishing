@@ -38,4 +38,8 @@ public class MainSceneManager : MonoBehaviour {
     public bool isPausedGame() {
         return isStopped;
     }
+
+    public void StopGame() {
+        SceneManager.LoadScene("title");
+    }
 }
