@@ -10,7 +10,7 @@ public class HariMovement : MonoBehaviour {
     [SerializeField] float fallSpeed;       //針を落とす速度
     [SerializeField] float waitTimeSecond;  //針を引っ張りきった状態で待つ時間
 
-    public enum HariState {
+    enum HariState {
         wait, pull, fall
     }
 
@@ -52,4 +52,14 @@ public class HariMovement : MonoBehaviour {
         return state == HariState.pull;
     }
 
+}
+
+
+
+public enum FishType {
+    angel, devil
+}
+
+public enum FishSize {
+    small, middle, big
 }
