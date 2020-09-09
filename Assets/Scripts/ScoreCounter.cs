@@ -39,7 +39,7 @@ public class ScoreCounter : MonoBehaviour {
     }
 
     void UpdateView() {
-        ui_scoreText.text = string.Format("{0:000}", score);
+        ui_scoreText.text = string.Format("{0:00000000}", score);
     }
 
     int DecideScoreValue(FishSize size, bool isRare) {

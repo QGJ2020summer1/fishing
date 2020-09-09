@@ -7,8 +7,12 @@ public class FishAppearance : MonoBehaviour
     FishParam param;
     [SerializeField] List<Sprite> fishSpriteList;
 
+    public bool isRare;
+
     void Start() {
         param = GetComponent<FishParam>();
+        param.isRare = isRare;
+        if(isRare) transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void DisAppear() {
@@ -21,6 +25,4 @@ public class FishAppearance : MonoBehaviour
         int index = (int)type * 3 + (int)size;
         GetComponent<SpriteRenderer>().sprite = fishSpriteList[index];
     }
-
-
 }

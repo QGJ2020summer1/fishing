@@ -13,6 +13,7 @@ public class FishPowerHandler : MonoBehaviour {
     Text ui_powerLevelText;
 
     List<int> catchedFishNum;
+    int prevPower;
 
     void Start() {
         instance = this;
@@ -23,6 +24,8 @@ public class FishPowerHandler : MonoBehaviour {
     public void ChangeFishPower(FishType type, FishSize size) {
         int value = DecideScoreValue(type, size);
         power = Mathf.Min(Mathf.Max(power + value, -powerMaxValue), powerMaxValue);
+        if(prevPower != power) OnChangedPower(prevPower, power);
+        prevPower = power;
         UpdateView();
         int index = (int)type * 3 + (int)size;
         catchedFishNum[index]++;
@@ -44,6 +47,10 @@ public class FishPowerHandler : MonoBehaviour {
 
     public List<int> GetCatchedFishNum() {
         return catchedFishNum;
+    }
+
+    void OnChangedPower(int prevPower, int power) {
+        
     }
 
 }
