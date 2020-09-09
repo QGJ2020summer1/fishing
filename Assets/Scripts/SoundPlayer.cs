@@ -76,6 +76,18 @@ public class SoundPlayer : MonoBehaviour {
         devilSource.volume = devil;
     }
 
+    IEnumerator ChangeMusicCoroutine(AudioSource from, AudioSource to) {
+        float changeFrame = 2;
+        for(int i = 0; i < changeFrame; i++) {
+            from.volume = 0.8f * (1 - (float)i / changeFrame);
+            to.volume = 0.8f * ((float)i / changeFrame);
+            yield return null;
+        }
+        from.volume = 0;
+        to.volume = 0.8f;
+
+    }
+
 
     [System.Serializable]
     public class SoundTable : Serialize.TableBase<SoundEffectType, AudioClip, SoundPair>{

@@ -10,14 +10,14 @@ public class FishPowerHandler : MonoBehaviour {
     [SerializeField] int powerMaxValue; // powerの絶対値の最大
 
     static int[] powerValueArray = {1, 3, 5};
-    Text ui_powerLevelText;
-
     List<int> catchedFishNum;
     int prevPower;
 
+    [SerializeField] List<Sprite> sp_tenbinList;
+    [SerializeField] SpriteRenderer tenbinImage; 
+
     void Start() {
         instance = this;
-        ui_powerLevelText = GetComponent<Text>();
         catchedFishNum = new List<int>(){0, 0, 0, 0, 0, 0};
     }
 
@@ -33,7 +33,7 @@ public class FishPowerHandler : MonoBehaviour {
 
     void UpdateView() {
         int powerLevel = GetPowerLevel();
-        ui_powerLevelText.text = powerLevel.ToString();        
+        tenbinImage.sprite = sp_tenbinList[powerLevel + 3];
     }
 
     public int GetPowerLevel() {
@@ -50,7 +50,6 @@ public class FishPowerHandler : MonoBehaviour {
     }
 
     void OnChangedPower(int prevPower, int power) {
-        
     }
 
 }

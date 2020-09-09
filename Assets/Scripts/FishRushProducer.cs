@@ -14,8 +14,13 @@ public class FishRushProducer : MonoBehaviour
 
     void Start() {
         instance = this;
+        StartCoroutine(RushCoroutine());
     }
 
+
+    void Update() {
+
+    }
 
     public void ProduceRush(FishType type, int num) {
         List<GameObject> list = type == FishType.angel ? angelList : devilList;
@@ -27,6 +32,16 @@ public class FishRushProducer : MonoBehaviour
         }
 
     }
+
+    IEnumerator RushCoroutine() {
+        while(true) {
+            int powerLevel = FishPowerHandler.instance.GetPowerLevel();
+            if(powerLevel >= 2) ProduceRush(FishType.devil, 5);
+            if(powerLevel <= -2) ProduceRush(FishType.angel, 5);
+            yield return new WaitForSeconds(10);
+        }
+    }
+
 
 
 
