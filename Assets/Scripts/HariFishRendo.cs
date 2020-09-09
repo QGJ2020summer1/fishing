@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class HariFishRendo : MonoBehaviour
 {
-    public FishSize size;
-    public FishType type;
-    public bool isRare;
+
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,12 +22,15 @@ public class HariFishRendo : MonoBehaviour
         }
     }
     
-
     void AddScore()
     {
-        ScoreCounter.instance.AddScore(size, isRare);
+        var param = GetComponent<FishParam>();
+        ScoreCounter.instance.AddScore(param.type, param.size, param.isRare);
             SoundPlayer.instance.PlaySoundEffect(SoundEffectType.getScore);
-            FishPowerHandler.instance.ChangeFishPower(type, size);
+            FishPowerHandler.instance.ChangeFishPower(param.type, param.size);
+            if(param.isRare) {
+                SpecialEffectActor.instance.StartEffect(param.type, param.size);
+            }
             Destroy (this.gameObject);
 
     }

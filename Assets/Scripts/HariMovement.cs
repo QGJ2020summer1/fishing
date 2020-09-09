@@ -51,6 +51,7 @@ public class HariMovement : MonoBehaviour {
             yield return null;
         }
 
+        transform.localPosition = new Vector3(transform.localPosition.x, waitPosY, 0);
         state = HariState.wait;
 
     }

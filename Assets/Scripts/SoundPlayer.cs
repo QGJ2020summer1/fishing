@@ -15,7 +15,9 @@ public enum SoundEffectType {
 }
 
 public enum BackGroundMusicType {
-    bgm_main,
+    bgm_main_normal,
+    bgm_main_angel,
+    bgm_main_devil,
 }
 
 
@@ -49,6 +51,31 @@ public class SoundPlayer : MonoBehaviour {
         source.clip = musicTable.GetTable()[type];
         source.Play();
     }
+
+    public void PlayMainBackGroundMusic() {
+        AudioSource normalSource = sources[sources.Length - 3];
+        normalSource.clip = musicTable.GetTable()[BackGroundMusicType.bgm_main_normal];
+        normalSource.volume = 0.8f;
+        normalSource.Play();
+        AudioSource angelSource = sources[sources.Length - 2];
+        angelSource.clip = musicTable.GetTable()[BackGroundMusicType.bgm_main_angel];
+        angelSource.volume = 0;
+        angelSource.Play();
+        AudioSource devilSource = sources[sources.Length - 1];
+        devilSource.clip = musicTable.GetTable()[BackGroundMusicType.bgm_main_devil];
+        devilSource.volume = 0;
+        devilSource.Play();
+    }
+
+    public void ChangeMainBackGroundMusic(int normal, int angel, int devil) {
+        AudioSource normalSource = sources[sources.Length - 3];
+        AudioSource angelSource = sources[sources.Length - 2];
+        AudioSource devilSource = sources[sources.Length - 1];
+        normalSource.volume = normal;
+        angelSource.volume = angel;
+        devilSource.volume = devil;
+    }
+
 
     [System.Serializable]
     public class SoundTable : Serialize.TableBase<SoundEffectType, AudioClip, SoundPair>{

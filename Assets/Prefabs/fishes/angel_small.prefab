@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -3436862185492719624}
   - component: {fileID: -3973118082099938551}
   - component: {fileID: -8504496230800029805}
+  - component: {fileID: 853356080937844693}
+  - component: {fileID: -7352448606532817474}
   m_Layer: 8
   m_Name: angel_small
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1369963778483622751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.35, y: -3.62, z: -0.49343467}
-  m_LocalScale: {x: 0.27596, y: 0.27596, z: 0.27596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8082288875812456484}
   m_Father: {fileID: 0}
@@ -105,6 +107,7 @@ MonoBehaviour:
   m_hpMax: 0
   m_exp: 0
   m_damage: 0
+  m_direction: {x: -1, y: 0, z: 0}
   respawnType: 0
 --- !u!50 &-3436862185492719624
 Rigidbody2D:
@@ -155,9 +158,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e456d5b391353459eb734243ce4333de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &853356080937844693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369963778483622751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503f156bfaf01416b90840a18f44ba84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   size: 0
   type: 0
   isRare: 0
+--- !u!114 &-7352448606532817474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369963778483622751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433a185e45a6c4b7b8d841501f940ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishSpriteList:
+  - {fileID: 21300000, guid: 856e902350b924d32a04e36e6d4a5e96, type: 3}
+  - {fileID: 21300000, guid: b53764ca79c0047e2899b0c569032452, type: 3}
+  - {fileID: 21300000, guid: 0e05fd3078d304f8290399ee013a0e71, type: 3}
+  - {fileID: 21300000, guid: 3ced25886ba4c4e449b289413fb68df4, type: 3}
+  - {fileID: 21300000, guid: de428c25409bf47abb9dab9f451ea322, type: 3}
+  - {fileID: 21300000, guid: 7b412441ae1c641908abea17095d779b, type: 3}
 --- !u!1001 &438245420918703380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Aura
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907827765665044034, guid: f1ceae87a615f4d07be85c689bc394fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8520523566618873136, guid: f1ceae87a615f4d07be85c689bc394fc,
         type: 3}

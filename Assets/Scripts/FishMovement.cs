@@ -25,13 +25,18 @@ public class FishMovement : MonoBehaviour
     public int m_damage; // この敵がプレイヤーに与えるダメージ
 
     private int m_hp; // HP
-    private Vector3 m_direction; // 進行方向
+    public Vector3 m_direction; // 進行方向
 
     public RESPAWN_TYPE respawnType;
 
     // 敵が生成された時に呼び出される関数
     private void Start()
     {
+        if(Random.value >= 0.95f) {
+            transform.GetChild(0).gameObject.SetActive(true);      //あとで消す
+            GetComponent<FishParam>().isRare = true;
+        }
+
         // HP を初期化する
         m_hp = m_hpMax;
     }
@@ -42,6 +47,8 @@ public class FishMovement : MonoBehaviour
         if(MainSceneManager.instance.isPausedGame()) return;
         // まっすぐ移動する
         transform.localPosition += m_direction * m_speed;
+
+        if(m_direction.x * transform.position.x >= 15) Destroy(gameObject);
     }
 
     // 敵が出現する時に初期化する関数
