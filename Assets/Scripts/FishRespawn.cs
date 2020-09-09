@@ -29,10 +29,14 @@ public class FishRespawn : MonoBehaviour
         // 出現する敵のプレハブを配列から取得する
         var enemyPrefab = m_enemyPrefabs[ enemyIndex ];
 
-        // 敵のゲームオブジェクトを生成する
-        var enemy = Instantiate( enemyPrefab );
+        float x = Random.Range(11.0f, 11.5f);
+		float y = Random.Range(-4.0f, 0.0f);
+		float z = Random.Range(0.0f, 2.0f);
 
+        // 敵のゲームオブジェクトを生成する
+        var enemy = Instantiate(enemyPrefab, new Vector3(x, y, z), Quaternion.identity);
         // 敵を初期化する
         enemy.Init();
     }
 }
+
