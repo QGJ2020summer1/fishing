@@ -15,6 +15,11 @@ public class MainSceneManager : MonoBehaviour {
     void Start() {
         instance = this;
         isStopped = false;
+        Invoke("StartGame", 0.1f);
+    }
+
+    void StartGame() {
+        SoundPlayer.instance.PlayMainBackGroundMusic();
     }
 
     public void FinishGame(int score, List<int> catchedFishNum) {
