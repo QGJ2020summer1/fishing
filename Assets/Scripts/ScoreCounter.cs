@@ -14,16 +14,27 @@ public class ScoreCounter : MonoBehaviour {
 
     int score;
 
+    bool isBuffed;
+
 
     void Start() {
         ui_scoreText = GetComponent<Text>();
         instance = this;
         score = 0;
+        isBuffed = false;
         UpdateView();
     }
 
-    public void AddScore(FishSize size, bool isRare) {
+    public void AddScore(FishType type, FishSize size, bool isRare) {
         score += DecideScoreValue(size, isRare);
+        if(isBuffed && type == FishType.angel) {
+            score += 300;
+        }
+        UpdateView();
+    }
+
+    public void AddScoreFixed(int score) {
+        score += score;
         UpdateView();
     }
 
@@ -38,6 +49,12 @@ public class ScoreCounter : MonoBehaviour {
 
     public int GetScore() {
         return score;
+    }
+
+    IEnumerator ScoreBuffCoroutine() {
+        isBuffed = true;
+        yield return new WaitForSeconds(10);
+        isBuffed = false;
     }
 
 }

@@ -9,12 +9,14 @@ public class TimeCounter : MonoBehaviour
     int timeLimit;
     Text ui_timeLimitText;
 
+    public static TimeCounter instance;
 
     void Start() {
         ui_timeLimitText = GetComponent<Text>();
         timeLimit = startTimeSecond;
         UpdateView();
         StartCoroutine(TimeCountCoroutine());
+        instance = this;
     }
 
 
@@ -32,4 +34,7 @@ public class TimeCounter : MonoBehaviour
         ui_timeLimitText.text = timeLimit.ToString();
     }
 
+    public int GetTime() {
+        return timeLimit;
+    }
 }

@@ -9,6 +9,7 @@ public class FishRespawn : MonoBehaviour
     public float m_interval; // 出現間隔（秒）
 
     private float m_timer; // 出現タイミングを管理するタイマー
+    public GameObject container;
 
     // 毎フレーム呼び出される関数
     private void Update()
@@ -24,13 +25,13 @@ public class FishRespawn : MonoBehaviour
         m_timer = 0;
 
         // 出現する敵をランダムに決定する
-        var enemyIndex = Random.Range( 0, m_enemyPrefabs.Length );
+        var enemyIndex = FishSpawnDecider.instance.DecideFishIndex();
 
         // 出現する敵のプレハブを配列から取得する
         var enemyPrefab = m_enemyPrefabs[ enemyIndex ];
 
         // 敵のゲームオブジェクトを生成する
-        var enemy = Instantiate( enemyPrefab );
+        var enemy = Instantiate( enemyPrefab, container.transform );
 
         // 敵を初期化する
         enemy.Init();
