@@ -11,7 +11,17 @@ public class FishRespawn : MonoBehaviour
     private float m_timer; // 出現タイミングを管理するタイマー
     public GameObject container;
 
+
+    void Start() {
+        Invoke("Init", 0.1f);
+    }
+
+    void Init() {
+        StartCoroutine(RareFishCoroutine());
+    }
+
     // 毎フレーム呼び出される関数
+
     private void Update()
     {
         // 出現タイミングを管理するタイマーを更新する
@@ -35,5 +45,22 @@ public class FishRespawn : MonoBehaviour
 
         // 敵を初期化する
         enemy.Init();
+
+    }
+
+    IEnumerator RareFishCoroutine() {
+        while(true) {
+            var power = FishPowerHandler.instance.GetPowerLevel();
+            if(power == 0) {
+                yield return null;
+                continue;
+            }
+            Debug.Log("rare!");
+            int index = (power > 0 ? 0 : 3) + Random.Range(0, Mathf.Abs(power));
+            var fish = Instantiate(m_enemyPrefabs[index], container.transform );
+            fish.GetComponent<FishAppearance>().isRare = true;
+            fish.Init();
+            yield return new WaitForSeconds(7);
+        }
     }
 }

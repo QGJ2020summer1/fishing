@@ -18,6 +18,13 @@ public class MainSceneManager : MonoBehaviour {
         Invoke("StartGame", 0.1f);
     }
 
+    void Update() {
+        if(TimeCounter.instance.GetTime() >= TimeCounter.instance.startTimeSecond - 50) return;
+        var power = FishPowerHandler.instance.GetPowerLevel();
+        if(power > 0) SoundPlayer.instance.ChangeMainBackGroundMusic(0, 1, 0);
+        else if(power < 0) SoundPlayer.instance.ChangeMainBackGroundMusic(0, 0, 1);
+    }
+
     void StartGame() {
         SoundPlayer.instance.PlayMainBackGroundMusic();
     }
